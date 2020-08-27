@@ -28,6 +28,11 @@ jobs:
         sudo apt-get update
         sudo apt-get install containerd runc
         sudo apt-get install -y ca-certificates curl wget docker.io build-essential gnupg-agent software-properties-common rsync ssh apt-transport-https
+    - name: Install python dep
+      run: |
         python -m pip install --upgrade pip
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: build client
+      run: |      
+        ARGO_VERSION=2.10.0 make client
