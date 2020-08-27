@@ -27,7 +27,7 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get remove docker docker-engine docker.io containerd runc
-        sudo apt-get install -y ca-certificates curl wget docker.io build-essential gnupg-agent software-properties-common rsync ssh apt-transport-https docker-ce docker-ce-cli
+        sudo apt-get install -y ca-certificates curl wget docker.io build-essential gnupg-agent software-properties-common rsync ssh apt-transport-https
         python -m pip install --upgrade pip
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
