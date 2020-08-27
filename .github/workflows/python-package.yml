@@ -25,8 +25,8 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Install dependencies
       run: |
-        apt-get update
-        apt-get install -y ca-certificates curl wget docker.io build-essential rsync ssh
+        sudo apt-get update
+        sudo apt-get install -y ca-certificates curl wget docker.io build-essential rsync ssh
         python -m pip install --upgrade pip
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
